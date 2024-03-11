@@ -1,0 +1,123 @@
+--01
+Select * From hr.locations
+--02
+Select * From hr.departments
+--03
+Select * From hr.countries
+--04
+Select * From hr.jobs
+--05
+Select * From hr.regions
+--06
+Select * From hr.employees
+--07
+Select * From hr.job_history  
+
+
+-----------
+Select * From hr.departments
+
+SELECT Department_ID FROM hr.departments
+SELECT Department_ID, Department_NAME FROM hr.departments
+SELECT Department_ID, Department_NAME, MANAGER_ID FROM hr.departments
+SELECT Department_ID, Department_NAME, MANAGER_ID, LOCATION_ID FROM hr.departments
+SELECT MANAGER_ID, Department_ID, LOCATION_ID, Department_NAME FROM hr.departments
+
+-------------------
+
+
+select location_id,
+city,
+state_province
+from hr.locations
+
+select department_id,
+department_name, manager_id
+from hr.departments
+
+select country_id,
+country_name
+from hr.countries
+
+select job_title,
+max_salary
+from hr.jobs
+
+select region_name
+from hr.regions
+
+select employee_id,
+first_name,
+last_name,
+salary
+from hr.employees
+
+select employee_id,
+start_date,
+end_date,
+job_id,
+department_id
+from hr.job_history
+
+-----------------------------
+
+select d.location_id "local_ID",
+d.street_address "endereco_rua",
+d.postal_code "cod_postal",
+d.city "cidade",
+d.state_province "estado",
+d.country_id "id_pais"
+from hr.locations d
+
+select e.department_id "id_departamento",
+e.department_name "nome_departamento",
+e.manager_id "id_gerente",
+e.location_id "id_localizacao"
+from hr.departments e
+
+SELECT 
+c.country_id "CODIGO", 
+c.country_name "PAÍS",
+c.region_id "CODIGO DA REGIÃO"
+FROM hr.countries c
+
+
+SELECT 
+j.job_id "CODIGO CARGO", 
+j.job_title "NOME DO CARGO", 
+j.min_salary "MENOR SALARIO", 
+j.max_salary "MAIOR SALARIO"
+FROM hr.jobs j
+
+
+
+SELECT 
+r.region_id "Codigo da Regiao", 
+r.region_name "Nome da Regiao" 
+FROM hr.regions r
+
+
+SELECT 
+z.EMPLOYEE_ID "COD FUNCIONARIO",
+z.FIRST_NAME "NOME",	
+z.LAST_NAME "SOBRENOME",	
+z.EMAIL "EMAIL",	
+z.PHONE_NUMBER "TELEFONE",	
+z.HIRE_DATE "DATA DE INICIO",	
+z.JOB_ID "COD CARGO",	
+z.SALARY "SALARIO",	
+z.COMMISSION_PCT "COMISSAO",	
+z.MANAGER_ID "COD GERENTE",	
+z.DEPARTMENT_ID "COD DEPTO" 
+FROM hr.employees z
+
+
+SELECT 
+jh.EMPLOYEE_ID "COD FUNC", 
+jh.START_DATE "DATA INICIO", 
+jh.END_DATE "DATA FIM", 
+jh.JOB_ID "COD CARGO", 
+jh.DEPARTMENT_ID "COD DEPTO"
+FROM hr.job_history jh
+
+
